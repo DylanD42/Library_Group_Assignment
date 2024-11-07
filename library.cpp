@@ -6,12 +6,11 @@
 using namespace std;
 
 
-Library::Library(){
-  //list<book> bookList;
-  //list<book> books;
-  //books.push_front();
-  }
-Library::~Library(){}
+//Library::Library(){
+//  }
+//Library::~Library(){}
+
+
 void Library::read_from_file(string fileName){
   string newTitle, newAuthor,newIsbn;
   int newPages, newYear;
@@ -25,10 +24,12 @@ void Library::read_from_file(string fileName){
   getline(infile,newTitle);
   getline(infile,newAuthor);
   infile >> newPages;
-  infile.ignore(1, '\n');
+  infile.ignore(1, '\n'); // ignores the newline that gets left from the extraction operator
   getline(infile,newIsbn);
   infile >> newPrice >> newYear;
-  infile.ignore(1, '\n');  
+  infile.ignore(1, '\n');
+  infile.ignore(1, '\n');  // the second ignore is so that the imput file can include
+                           // a space for readablility
   
   while(infile){
     push_back(newTitle, newAuthor, newPages, newIsbn, newPrice, newYear);
@@ -39,11 +40,29 @@ void Library::read_from_file(string fileName){
     getline(infile,newIsbn);
     infile >> newPrice >> newYear;
     infile.ignore(1, '\n');
-    
+    infile.ignore(1, '\n');  
   }
   infile.close();
 }
-//void write_to_file(string fileName);
+void Library::write_to_file(string fileName){
+  ofstream outfile(fileName);
+  if (!outfile){
+    cout << "Error. Unable to open the output file." << endl;
+  }
+  list<book>::iterator it;
+  for(it = bookList.begin(); it != bookList.end(); it++){
+    outfile << it->title << endl
+	    << it->author << endl
+	    << it->pages << endl
+	    << it->isbn << endl
+	    << it->price << endl
+	    << it->year << endl << endl;
+  }
+  
+  outfile.close();
+}
+
+
 void Library::push_front(string newTitle, string newAuthor, int newPages,
 	       string newIsbn, float newPrice, int newYear){
   book temp;

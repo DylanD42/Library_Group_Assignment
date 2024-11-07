@@ -17,8 +17,8 @@ struct book{
 
   class Library{
   public:
-    Library();
-    ~Library();
+    //Library();
+    //~Library();
     void read_from_file(string fileName);
     void write_to_file(string fileName);
     void push_front(string newTitle, string newAuthor, int newPages,

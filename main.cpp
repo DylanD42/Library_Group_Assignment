@@ -7,6 +7,7 @@ int main() {
   Library PML;
   
   PML.read_from_file("imput.txt");
+  PML.write_to_file("output.txt");
   PML.print();
 
   return 0;
