@@ -1,0 +1,60 @@
+The Great Gatsby
+F. Scott Fitzgerald
+180
+9780743273565
+10.99
+1925
+To Kill a Mockingbird
+Harper Lee
+281
+9780061120084
+7.19
+1960
+1984
+George Orwell
+328
+9780451524935
+9.99
+1949
+Pride and Prejudice
+Jane Austen
+279
+9780141439518
+5.99
+1813
+Moby-Dick
+Herman Melville
+720
+9781503280786
+11.95
+1851
+War and Peace
+Leo Tolstoy
+1225
+9781853260629
+12.99
+1869
+The Catcher in the Rye
+J.D. Salinger
+214
+9780316769488
+8.99
+1951
+Emma
+Jane Austen
+474
+9781503290563
+9.95
+1815
+The Odyssey
+Homer
+541
+9780140268867
+10.00
+800
+Crime and Punishment
+Fyodor Dostoevsky
+430
+9780486415871
+6.99
+1866

@@ -16,14 +16,12 @@ struct book{
 };
 
   class Library{
-  private:
-    list<book> collection;
   public:
     Library();
     ~Library();
     void read_from_file(string fileName);
     void write_to_file(string fileName);
-    void push_font(string newTitle, string newAuthor, int newPages,
+    void push_front(string newTitle, string newAuthor, int newPages,
 		   string newIsbn, float newPrice, int newYear);
 
     void push_back(string newTitle, string newAuthor, int newPages,
@@ -32,13 +30,15 @@ struct book{
     void insert_sorted(string newTitle, string newAuthor, int newPages,
                    string newIsbn, float newPrice, int newYear);
     
-    string find_author(string authorsName);
+    void find_author(string authorsName);
 
-    string find_album(string bookName);
+    void find_album(string bookName);
 
     void genericDelete(string authorsName, string bookName);
 
     void print();
+    private:
+    list<book> bookList;
   };
 
 

@@ -4,8 +4,11 @@
 using namespace std;
 
 int main() {
-  cout << "Hello World" << endl;
+  Library PML;
   
+  PML.read_from_file("imput.txt");
+  PML.print();
+
   return 0;
 }
 
