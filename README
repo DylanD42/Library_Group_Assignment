@@ -1,41 +1,27 @@
-/**
- * @file README
- * @author Dylan Daniels
- * @date 2024-11-07
- * @brief a library of books
- * 
- * a library of books using the STL::List to create a linked list of books 
-**/
+Hello! Welcome to our Library program.
 
-Imput file is formatted as follows:
-      TITLE
-      AUTHOR
-      NUMBER OF PAGES
-      ISBN
-      PRICE
-      RELEASE YEAR
+Whenever you run the program, you will use the excutable: ./book
 
-Inlucde a gab between book entries.
+We used a switch case method in main to allow you, the user, to choose how you'd like to interact with our Library service, which includes the following options:
 
-Functions that can be called:
+Reading from a file -- Choose input.txt for a nice variety of books that includes the title, author, page count, ISBN, shelf price, and year published information attached.
 
-Adds element to the front of the linked list.
-	  push_front(...);
+Write the library to a file -- This would be you creating a new file for the library data to be put into.
 
-Adds element to the back for the linked list.
-	  push_back(...);
+Print the library -- This would print the library you've modified or interacted with, at least.
 
-Adds element in a sorted positon in the linked list based off the authors name.
-	  insert_sorted(...);
+Search for a specific book -- You would search by inputing the book's title. If the title is in the library, the book's information will be provided. Otherwise, we will let you know if it cannot be found.
 
-Prints the books written by the provided authors name.
-	  find_author(authors name);
+Search for books by a specific author -- You would search by inputing the author's full name.
 
-Prints the data assocciated with the entered book title.
-	  find_album(book title);
+Add an entry via "donation" -- You would add a new entry to the library by inputing the author's full name, followed by all other relevant information that you are asked to enter.
 
-Deletes a book with the title provided assuming the authors name is correct.
-	  genericDelete(authors name, book name);
+Delete an entry due to a book being "missing" -- You would delete an already existing entry from the library by submitting the book's information.
 
-Prints the whole library with all accompanying data. 
-	  print();
+Exit the program -- Whenever you're done interacting, select 8 to leave.
+
+NOTES:
+
+We have included a list of book entries for a library under the file named: input.txt
+
+Thank you!!

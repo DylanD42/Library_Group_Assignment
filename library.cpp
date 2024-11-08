@@ -5,12 +5,6 @@
 #include<list>
 using namespace std;
 
-
-//Library::Library(){
-//  }
-//Library::~Library(){}
-
-
 void Library::read_from_file(string fileName){
   string newTitle, newAuthor,newIsbn;
   int newPages, newYear;
@@ -44,7 +38,7 @@ void Library::read_from_file(string fileName){
   }
   infile.close();
 }
-<<<<<<< HEAD
+
 void Library::write_to_file(string fileName) {
   ofstream outFile(fileName);
 
@@ -66,7 +60,8 @@ void Library::write_to_file(string fileName) {
   cout << "The Library has been written to " << fileName << " successfully," << endl;
 }
 
-=======
+//=======
+/*
 void Library::write_to_file(string fileName){
   ofstream outfile(fileName);
   if (!outfile){
@@ -84,9 +79,9 @@ void Library::write_to_file(string fileName){
   
   outfile.close();
 }
+*/
 
-
->>>>>>> master
+//>>>>>>> master
 void Library::push_front(string newTitle, string newAuthor, int newPages,
 	       string newIsbn, float newPrice, int newYear){
   book temp;
