@@ -1,1 +1,41 @@
-readme file
+/**
+ * @file README
+ * @author Dylan Daniels
+ * @date 2024-11-07
+ * @brief a library of books
+ * 
+ * a library of books using the STL::List to create a linked list of books 
+**/
+
+Imput file is formatted as follows:
+      TITLE
+      AUTHOR
+      NUMBER OF PAGES
+      ISBN
+      PRICE
+      RELEASE YEAR
+
+Inlucde a gab between book entries.
+
+Functions that can be called:
+
+Adds element to the front of the linked list.
+	  push_front(...);
+
+Adds element to the back for the linked list.
+	  push_back(...);
+
+Adds element in a sorted positon in the linked list based off the authors name.
+	  insert_sorted(...);
+
+Prints the books written by the provided authors name.
+	  find_author(authors name);
+
+Prints the data assocciated with the entered book title.
+	  find_album(book title);
+
+Deletes a book with the title provided assuming the authors name is correct.
+	  genericDelete(authors name, book name);
+
+Prints the whole library with all accompanying data. 
+	  print();

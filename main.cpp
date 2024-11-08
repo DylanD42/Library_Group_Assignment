@@ -11,6 +11,7 @@ int main() {
   int pages, year;
   float price;
   
+<<<<<<< HEAD
   do {
     cout << endl;
     cout << "Hello! Please select one of the following options." << endl;
@@ -77,6 +78,11 @@ int main() {
 
       cout << "Please enter the total pages: ";
       cin >> pages;
+=======
+  PML.read_from_file("imput.txt");
+  PML.write_to_file("output.txt");
+  PML.print();
+>>>>>>> master
 
       cout << "Enter the ISBN: ";
       cin >> isbn;
