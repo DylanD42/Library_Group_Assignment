@@ -7,7 +7,6 @@
  * reads in a list of books and using the STL List object 
  */
 
-
 #ifndef LIBRARY_H
 #define LIBRARY_H
 
@@ -15,6 +14,14 @@
 #include<list>
 #include<string>
 using namespace std;
+
+/**
+ * book that goes in the library
+ *
+ * @class book{ library.h "Library_Group_Assignment/library.h"
+ * @brief holds all the information a book has assigned to it, works with the library class to store data
+ *
+ */
 struct book{
   string title;
   string author;
@@ -24,6 +31,14 @@ struct book{
   int year;
 };
 
+
+/**
+ * library class that holds the books
+ *
+ * @class Library{ library.h "Library_Group_Assignment/library.h"
+ * @brief library class that holds the books and has various functions avabible 
+ *
+ */
   class Library{
   public:
 

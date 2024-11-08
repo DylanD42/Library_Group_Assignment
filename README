@@ -1,10 +1,20 @@
-Hello! Welcome to our Library program.
+Hello! Welcome to our Library program, created by Anna Hensley and Dylan Daniels.
 
 Whenever you run the program, you will use the excutable: ./book
 
 We used a switch case method in main to allow you, the user, to choose how you'd like to interact with our Library service, which includes the following options:
 
 Reading from a file -- Choose input.txt for a nice variety of books that includes the title, author, page count, ISBN, shelf price, and year published information attached.
+
+Imput file is formatted as follows:
+      TITLE
+      AUTHOR
+      NUMBER OF PAGES
+      ISBN
+      PRICE
+      RELEASE YEAR
+**Inlucde a gab between book entries.
+
 
 Write the library to a file -- This would be you creating a new file for the library data to be put into.
 

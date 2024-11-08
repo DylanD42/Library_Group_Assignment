@@ -1,17 +1,25 @@
+/**
+ * @file main.cpp
+ * @authors Anna Hensley, Dylan Daniels
+ * @date 2024-11-08
+ * @brief is the main file for the library program
+ * 
+ * includes the UI code for the library
+ */
+
 #include "library.h"
 #include <iostream>
 
 using namespace std;
 
 int main() {
-  Library PML;
+  Library PML; 
 
   int choice;
   string fileName, authorsFN, authorsLN, bookTitle, isbn;
   int pages, year;
   float price;
   
-  //<<<<<<< HEAD
   do {
     cout << endl;
     cout << "Hello! Please select one of the following options." << endl;
@@ -78,12 +86,6 @@ int main() {
 
       cout << "Please enter the total pages: ";
       cin >> pages;
-      //=======
-      // PML.read_from_file("imput.txt");
-      //PML.write_to_file("output.txt");
-      //PML.print();
-      //>>>>>>> master
-
       cout << "Enter the ISBN: ";
       cin >> isbn;
 

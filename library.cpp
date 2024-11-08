@@ -1,3 +1,12 @@
+/**
+ * @file library.cpp
+ * @authors Dylan Daniels, Anna Hensley
+ * @date 2024-11-08
+ * @brief the cpp file for the library project
+ * 
+ * reads in a list of books and using the STL List object
+ */
+
 #include "library.h"
 #include<iostream>
 #include<fstream>
@@ -5,6 +14,16 @@
 #include<list>
 using namespace std;
 
+
+/**
+ * reads from file
+ *
+ * @param string fileName valid filename to be opened
+ * @pre the file is loaded properly 
+ * @return void 
+ * @post List is filled with data provided in the file
+ * 
+ */
 void Library::read_from_file(string fileName){
   string newTitle, newAuthor,newIsbn;
   int newPages, newYear;
@@ -39,6 +58,15 @@ void Library::read_from_file(string fileName){
   infile.close();
 }
 
+/**
+ * writes to file
+ *
+ * @param string fileName is a valid file name to be written to
+ * @pre the list is properly loaded with data
+ * @return void 
+ * @post the output file is written to with the data in the list
+ * 
+ */
 void Library::write_to_file(string fileName) {
   ofstream outFile(fileName);
 
@@ -60,28 +88,19 @@ void Library::write_to_file(string fileName) {
   cout << "The Library has been written to " << fileName << " successfully," << endl;
 }
 
-//=======
-/*
-void Library::write_to_file(string fileName){
-  ofstream outfile(fileName);
-  if (!outfile){
-    cout << "Error. Unable to open the output file." << endl;
-  }
-  list<book>::iterator it;
-  for(it = bookList.begin(); it != bookList.end(); it++){
-    outfile << it->title << endl
-	    << it->author << endl
-	    << it->pages << endl
-	    << it->isbn << endl
-	    << it->price << endl
-	    << it->year << endl << endl;
-  }
-  
-  outfile.close();
-}
-*/
 
-//>>>>>>> master
+
+/**
+ * adds a new element to the front of the list
+ *
+ * @param string newTitle title of book
+ * @param string newAuthor name of author we wish to add
+ * @param int newPages number of pages of the book were adding
+ * @pre the list is created 
+ * @return void 
+ * @post this new book is added to the front of the list
+ * 
+ */
 void Library::push_front(string newTitle, string newAuthor, int newPages,
 	       string newIsbn, float newPrice, int newYear){
   book temp;
@@ -93,6 +112,18 @@ void Library::push_front(string newTitle, string newAuthor, int newPages,
   temp.year = newYear;
   bookList.push_front(temp);
 }
+
+/**
+ * adds a new element to the back of the list
+ *
+ * @param string newTitle title of book we wish to add
+ * @param string newAuthor name of the author we wish to add
+ * @param int newPages number of pages of the book were adding
+ * @pre the list is created
+ * @return void 
+ * @post the new element is added to the end of the list
+ * 
+ */
 void Library::push_back(string newTitle, string newAuthor, int newPages,
                string newIsbn, float newPrice, int newYear){
   book temp;
@@ -105,7 +136,17 @@ void Library::push_back(string newTitle, string newAuthor, int newPages,
   bookList.push_back(temp);
 }
 
-
+/**
+ * adds a new element in a sorted position inside the list
+ *
+ * @param string newTitle title of book we wish to add
+ * @param string newAuthor name of the author we wish to add
+ * @param int newPages number of pages of the book were adding
+ * @pre the list is created
+ * @return void 
+ * @post the new element is inserted sorted in the list
+ * 
+ */
 void Library::insert_sorted(string newTitle, string newAuthor, int newPages,
                    string newIsbn, float newPrice, int newYear){
   book temp;
@@ -121,28 +162,18 @@ void Library::insert_sorted(string newTitle, string newAuthor, int newPages,
   while (it != bookList.end() && newTitle > it->title) {
     it++;
   }
-  
-  //cout << endl << it->author << endl;
-  /*
-  while(newAuthor > it->author && (it != bookList.end())){
-    it++;
-    cout << "it: "<<it->author << " new author : " << newAuthor << endl; 
-    }*/
-  /*
-  for(it = bookList.begin(); it != bookList.end(); it++){
-    cout << it->author << " " << newAuthor << endl;
-    if(it->author < newAuthor){
-      cout << "true" << endl;
-    }
-    if(it->author > newAuthor){
-      cout << "false" << endl;
-    }
-  }
-  */
   bookList.insert(it, temp);
 }
 
-//    
+/**
+ * searchs through the list to see if there exits any books under the authors name 
+ *
+ * @param string authorsName is the name of the author we wish to lookup
+ * @pre assumes that list is loaded properly, preferably with a book by the author we are looking up
+ * @return void 
+ * @post prints all of the books that by the author
+ * 
+ */   
 void Library::find_author(string authorsName){
   list<book>::iterator it = bookList.begin();
   bool found = false;
@@ -170,6 +201,16 @@ void Library::find_author(string authorsName){
   }
 }
 
+/**
+ * prints all of the data associated with the passed book
+ *
+ * @param string bookName is the book name were looking up
+ * @pre assumes the list is loaded, preferably incuding the name of the book we are searching for
+ * @return void 
+ * @post prints the data associated with that book to the screen
+ * 
+ */
+
 void Library::find_album(string bookName){
   list<book>::iterator it = bookList.begin();
   
@@ -178,8 +219,6 @@ void Library::find_album(string bookName){
   while((it->title != bookName) && (it != bookList.end())){
     it++;
     }
-    
-    //for(it = bookList.begin(); it != bookList.end(); it++){
     if(it->title == bookName){
       
       cout << endl;
@@ -190,17 +229,23 @@ void Library::find_album(string bookName){
       cout << "Shelf Price: $" << it->price << endl;
       cout << "Release Year: " << it->year << endl;
       cout << endl;
-     
-      //}
     }
     else if(it->title != bookName){
       cout << bookName << " was not found in the library." << endl;
-    }
-    
-    
+    }    
     
 }
 
+/**
+ * deletes a element in the list
+ *
+ * @param string authorsName is the name of the author tied to the book we wish to delete
+ * @param string bookName is the name of the book we wish to delete
+ * @pre the list is loaded with data, preferably with the book by the author we are trying to delete
+ * @return void 
+ * @post the element is deleted if found
+ * 
+ */
 void Library::genericDelete(string authorsName, string bookName){
   list<book>::iterator it = bookList.begin();
   cout << "Deleting " << bookName << " from "  << authorsName <<" from the library."<< endl;
@@ -224,30 +269,20 @@ void Library::genericDelete(string authorsName, string bookName){
 	 << it->author << " but we have other titles from them." << endl;
     return;
   }
-  
-  //if((it->title != bookName) && (it->author != authorsName)){
   cout << "We do not have that title." << endl;
-  
 }
+
+
+/**
+ * prints the library 
+ *
+ * @pre the library is loaded with data
+ * @return void 
+ * @post the library is printed to the screen
+ * 
+ */
 void Library::print(){
-  /*list<book>::iterator it;
-  cout << endl << "printing list..." << endl << endl;
-  cout <<"+---------------------------+" << endl;
-  for(it = bookList.begin(); it != bookList.end(); it++){
-    
-    cout << "Title: " << it->title << endl;
-    cout << "Author: " << it->author << endl;
-    cout << "Pages: " << it->pages << endl;
-    cout << "ISBN: " << it->isbn << endl;
-    cout << "Price: $" << it->price << endl;
-    cout << "Release year: " << it->year << endl << endl;
-    
-  }
-  cout <<"+---------------------------+" << endl;
-  */
-
   bool swapped;
-
   do {
     swapped = false;
     list<book>::iterator it1 = bookList.begin();
